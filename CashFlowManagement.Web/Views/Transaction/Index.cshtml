@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CashFlowManagement.Web.Models.TransactionDto>
+
+@{
+    ViewBag.Title = "Transactions";
+}
+
+<h2>Transactions</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>CreatedAt</th>
+            <th>UserId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.Type</td>
+                <td>@transaction.Amount</td>
+                <td>@transaction.CreatedAt</td>
+                <td>@transaction.UserId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<a asp-action="Create">Add New Transaction</a>

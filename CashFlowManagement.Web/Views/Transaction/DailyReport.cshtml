@@ -1,0 +1,11 @@
+﻿ 
+@model DailyReportDto
+
+<h2>Daily Report for @Model.Date.ToString("yyyy-MM-dd")</h2>
+
+<p>Total Credits: @Model.TotalCredits</p>
+<p>Total Debits: @Model.TotalDebits</p>
+<p>Balance: @Model.Balance</p>
+
+<a href="@Url.Action("Index", "Transaction")">Back to Transactions</a>
+
